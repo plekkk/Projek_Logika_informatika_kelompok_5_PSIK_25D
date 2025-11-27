@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Inklusi Eksklusi 2 Himpunan</title>
+
+<!-- CSS digabung ke dalam HTML -->
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #8f5305c2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: rgba(14, 194, 218, 0.836);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(13, 2, 14, 0.1);
+    width: 350px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input {
+    padding: 8px;
+    width: 100%;
+    margin: 5px 0 12px;
+}
+
+button {
+    padding: 10px;
+    background: #4169e1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background: #034ea3;
+}
+
+h3 {
+    margin-top: 20px;
+    padding: 10px;
+    background: #f4f7ff;
+    border-left: 5px solid #4169e1;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Inklusi-Eksklusi (2 Himpunan)</h2>
+
+    <p>|A ∪ B| = |A| + |B| − |A ∩ B|</p>
+
+    <label>|A| :</label>
+    <input type="number" id="A">
+
+    <label>|B| :</label>
+    <input type="number" id="B">
+
+    <label>|A ∩ B| :</label>
+    <input type="number" id="AB">
+
+    <button onclick="hitung2()">Hitung</button>
+
+    <h3 id="hasil2"></h3>
+</div>
+
+<!-- JavaScript digabung -->
+<script>
+function hitung2() {
+    let A = parseInt(document.getElementById("A").value);
+    let B = parseInt(document.getElementById("B").value);
+    let AB = parseInt(document.getElementById("AB").value);
+
+    if (isNaN(A) || isNaN(B) || isNaN(AB)) {
+        document.getElementById("hasil2").innerHTML = "Harap isi semua nilai!";
+        return;
+    }
+
+    let hasil = A + B - AB;
+    document.getElementById("hasil2").innerHTML = "|A ∪ B| = " + hasil;
+}
+</script>
+
+</body>
+</html>
