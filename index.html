@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Inklusi-Eksklusi 3 Himpunan</title>
+
+<style>
+body {
+    background: #c78904;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.container {
+    background: #33baf0;
+    padding: 25px;
+    border-radius: 10px;
+    width: 380px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #005fa3;
+}
+
+h3 {
+    background: #e8f0ff;
+    padding: 10px;
+    border-left: 5px solid #0077cc;
+    margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Hitung n(A ∩ B ∩ C)</h2>
+
+    <p><b>Rumus:</b><br>
+    n(A ∪ B ∪ C) = A + B + C − AB − AC − BC + ABC</p>
+
+    <label>n(A)</label>
+    <input type="number" id="A" value="A">
+
+    <label>n(B)</label>
+    <input type="number" id="B" value="B">
+
+    <label>n(C)</label>
+    <input type="number" id="C" value="C">
+
+    <label>n(A ∩ B)</label>
+    <input type="number" id="AB" value="AB">
+
+    <label>n(A ∩ C)</label>
+    <input type="number" id="AC" value="AC">
+
+    <label>n(B ∩ C)</label>
+    <input type="number" id="BC" value="BC">
+
+    <label>n(A ∪ B ∪ C)</label>
+    <input type="number" id="AUBUC" value="ABC">
+
+    <button onclick="hitungABC()">Hitung n(A ∩ B ∩ C)</button>
+
+    <h3 id="hasil"></h3>
+</div>
+
+<script>
+function hitungABC() {
+    let A = parseInt(document.getElementById("A").value);
+    let B = parseInt(document.getElementById("B").value);
+    let C = parseInt(document.getElementById("C").value);
+    let AB = parseInt(document.getElementById("AB").value);
+    let AC = parseInt(document.getElementById("AC").value);
+    let BC = parseInt(document.getElementById("BC").value);
+    let AUBUC = parseInt(document.getElementById("AUBUC").value);
+
+    // Rumus dicari ABC:
+    // ABC = n(AUBUC) - (A + B + C - AB - AC - BC)
+
+    let ABC = AUBUC - (A + B + C - AB - AC - BC);
+
+    document.getElementById("hasil").innerHTML =
+        "Hasil: n(A ∩ B ∩ C) = <b>" + ABC + "</b>";
+}
+</script>
+
+</body>
+</html>
